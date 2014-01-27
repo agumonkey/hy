@@ -1,5 +1,5 @@
-Welcome to Hy's documentation!
-==============================
+Bienvenue sur la documentation du langage Hy!
+=============================================
 
 
 
@@ -8,20 +8,19 @@ Welcome to Hy's documentation!
    :alt: Hy logo
    :align: left
 
-Welcome to `Hy <https://github.com/hylang/hy>`_!
-Hy is a wonderful dialect of Lisp that's embedded in Python.
-Since Hy transforms its lisp code into the python Abstract Syntax
-Tree, you have the whole beautiful world of python at your fingertips,
-in lisp form!
+Bienvenue sur `Hy <https://github.com/hylang/hy>`_!
+Hy est un delicieux dialecte de Lisp en Python.
+Comme Hy transform son code lisp an AST python, vous avez la totalite du monde python sous vos doigts,
+sous l'apparence d'un Lisp!
 
-Meet our mascot, "Cuddles":
+Voici notre mascotte, "Cuddles" (~Cajoles en francais) :
 
 .. image:: http://fc07.deviantart.net/fs70/i/2013/138/f/0/cuddles_the_hacker_by_doctormo-d65l7lq.png
-   :alt: Paul riding cuddles into the distance
+   :alt: Paul chevauchant cuddles [sur la longueur|TOFIX]
 
 ..
-   Our old ascii art mascot version
-   Retained as an easter egg for those who read the docs via .rst!
+   Et l'ancienne version ascii art de la mascotte, preservee
+   comme Oeuf de Paques, pour les lecteurs de la documentation en .rst natif!
 
      LET'S CUDDLEFISH
                 ______
@@ -32,17 +31,17 @@ Meet our mascot, "Cuddles":
      \|\||/
 
 
-You can try Hy `in your browser <https://try-hy.appspot.com>`_.
+Vous pouvez essayer Hy `dans votre navigateur <https://try-hy.appspot.com>`_.
 
-Read more about Hy in these docs!
+Apprenez en plus sur Hy dans cette documentation!
 
-We're also on IRC!  Join
-`#hy on irc.freenode.net <http://webchat.freenode.net/?channels=hy>`_!
+Nous sommes aussi sur IRC!  Rejoignez
+`#hy sur irc.freenode.net <http://webchat.freenode.net/?channels=hy>`_!
 
-Documentation Index
-===================
+Index
+=====
 
-Contents:
+Contenu:
 
 .. toctree::
    :maxdepth: 3
