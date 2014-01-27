@@ -3,19 +3,19 @@ Quickstart
 ==========
 
 .. image:: _static/cuddles-transparent-small.png
-   :alt: Karen Rustard's Cuddles
+   :alt: Cuddles par Karen Rustard
 
-(Thanks to Karen Rustad for Cuddles!)
+(Remerciements a Karen Rustad pour Cuddles!)
 
 
-**HOW TO GET HY REAL FAST**:
+**COMMENT INSTALLER HY RAPIDEMENT**:
 
-1. Create a `Virtual Python Environment
+1. Creez un `Environment Virtuel Python
    <https://pypi.python.org/pypi/virtualenv>`_
-2. Activate your Virtual Python Environment
-3. Install `hy from PyPI <https://pypi.python.org/pypi/hy>`_ with ``pip install hy``
-4. Start a REPL with ``hy``
-5. Type stuff in the REPL::
+2. Activez le
+3. Installez `hy from PyPI <https://pypi.python.org/pypi/hy>`_ via ``pip install hy``
+4. Lancez la boucle d'interaction (REPL) via ``hy``
+5. Tapez-y quelques lignes::
 
        => (print "Hy!")
        Hy!
@@ -25,19 +25,18 @@ Quickstart
 
        etc
 
-6. Hit CTRL-D when you're done
+6. Pressez CTRL-D quand vous avez fini
 
-OMG! That's amazing! I want to write a hy program.
+OMG! C'est genial! Je veux ecrire un programme en hy.
 
-7. Open up an elite programming editor and type::
+7. Ouvrez votre editeur de code pour elites et tapez::
 
        (print "I was going to code in python syntax, but then I got hy.")
 
-8. Save as ``awesome.hy``
-9. And run your first Hy program::
+8. Sauvegardez sous ``awesome.hy``
+9. Puis executez votre premier programme Hy::
 
         hy awesome.hy
 
-10. Take a deep breath so as to not hyperventilate
-11. Smile villainously and sneak off to your hydeaway and do
-    unspeakable things
+10. Inspirez profondemment afin de ne rester calme
+11. Sourriez malicieusement avant de vous echapper votre votre cachette perpetrer d'innommables actes.
