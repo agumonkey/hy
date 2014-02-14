@@ -5,7 +5,7 @@ Tutoriel
 .. TODO
 .. 
 ..  - Comment indexer un array ou un dictionnaire?
-..  - Comment definir des plages sur un array?  e.g. x[5:] ou y[2:10]
+..  - Comment définir des plages sur un array?  e.g. x[5:] ou y[2:10]
 ..  - Vous laisser sans voix avec les macros!
 ..  - [Where's my banana???|TOFIX]
 ..  - Mentionner l'interoperabilite entre fichier .hy et .py et vice et versa!
@@ -13,49 +13,48 @@ Tutoriel
 Bienvenue dans ce tutoriel pour la langage Hy!
 
 Pour faire court, Hy est un dialecte Lisp, qui transpile sa structure vers
-Python... literalement convertissant en AST Python!
-(En des termes moins gracieux, Hy, le cache-misere pour python [lisp-stick on a python! en Anglais])
+Python... littéralement convertissant en AST Python!
+(En des termes moins gracieux, Hy, le cache-misère pour python [lisp-stick on a python! en Anglais])
 
-Plutot sympa car cela implique plusieurs choses a propros de Hy:
+Plutôt sympa car cela implique plusieurs choses a propos de Hy:
 
- - Un lisp tres pythonic
- - Pour les lispeurs, un formidable moyen de combiner les immensese capacites de lisp dans le large
-   ecosysteme de Python (oui, vous pouvez desormais ecrire des webapps Django en lisp!)
- - Pour les pythonistas, ne pas sortir de sa zone de comfort pour explorer lisp!
-   comfort of python!
- - Pour les autres: un langage agreable plein de bonnes idees!
+ - Un lisp très pythonic
+ - Pour les lispeurs, un formidable moyen de combiner les immenses capacités de lisp dans le large
+   écosystème de Python (oui, vous pouvez désormais écrire des webapps Django en lisp!)
+ - Pour les pythonistas, ne pas sortir de sa zone de confort pour explorer lisp!
+ - Pour les autres: un langage agréable plein de bonnes idées!
 
 
 Introduction rapide a lisp pour les pythonistas
 ===============================================
 
-Peut-etre n'avez vous jamais utilise lisp auparavant, mais python oui!
+Peut-être n'avez vous jamais utilise lisp auparavant, mais python oui!
 
-En fait, un "hello world" en hy est tres simple. Voyons voir:
+En fait, un "hello world" en hy est très simple. Voyons voir:
 
 .. code-block:: clj
 
    (print "hello world")
 
-Vous avez bien vu?  Facile! Vous l'avez surement devine, c'est la meme chose que ce qui suit en python::
+Vous avez bien vu?  Facile! Vous l'avez sûrement devine, c'est la même chose que ce qui suit en python::
 
   print "hello world"
 
-Pour introduire un peu de maths basiques, on pourrait ecrire:
+Pour introduire un peu de maths basiques, on pourrait écrire:
 
 .. code-block:: clj
 
    (+ 1 3)
 
-Qui renverrait 4 en bon equivalent du:
+Qui renverrait 4 en bon équivalent du:
 
 .. code-block:: clj
 
    1 + 3
 
-Ce qui saute aux yeux, c'est que le premier element de la liste est la fonction a appeler
-le reste etant les arguments fournis a cette derniere.
-Plus generalement, en hy (comme dans la plupart des lisps) l'operateur + accepte un nombre
+Ce qui saute aux yeux, c'est que le premier élément de la liste est la fonction a appeler
+le reste étant les arguments fournis a cette dernière.
+Plus généralement, en hy (comme dans la plupart des lisps) l'opérateur + accepte un nombre
 variable d'arguments:
 
 .. code-block:: clj
@@ -64,24 +63,24 @@ variable d'arguments:
 
 Qui renverrait 59.
 
-Peut-etre vous avez deja entendu parle de lisp avant, sans en connaitre plus a son sujet.
-Lisp n'est pas aussi complique que vous pouvez l'imaginer, de plus hy herite de python, ce qui en fait
-un vehicule adequat pour apprendre lisp.  Ce qui ressort tout suite de lisp
-c'est le nombre eleve de parentheses.  Cela peut rendre les choses confuses
-au depart, mais en fait non.  Prenons une simple expression mathematique
-pleine de parentheses a saisir dans l'interprete hy:
+Peut-être vous avez déjà entendu parle de lisp avant, sans en connaître plus a son sujet.
+Lisp n'est pas aussi complique que vous pouvez l'imaginer, de plus hy hérite de python, ce qui en fait
+un véhicule adéquat pour apprendre lisp.  Ce qui ressort tout suite de lisp
+c'est le nombre élevé de parenthèses.  Cela peut rendre les choses confuses
+au départ, mais en fait non.  Prenons une simple expression mathématique
+pleine de parenthèses a saisir dans l'interprète hy:
 
 .. code-block:: clj
 
    (setv result (- (/ (+ 1 3 88) 2) 8))
 
-Ce qui renverrait 38.  Pourquoi donc?  Voila l'equivalent ecrit en python cette fois:::
+Ce qui renverrait 38.  Pourquoi donc?  Voila l'équivalent écrit en python cette fois:::
   
   result = ((1 + 3 + 88) / 2) - 8
 
-Si vous aviez a evaluer l'exemple precedent en python,
-vous procederiez en evaluant chaque sous-expression.
-Hy ne fait pas exception a cette regle.  Commencons par la version
+Si vous aviez a évaluer l'exemple précèdent en python,
+vous procéderiez en évaluant chaque sous-expression.
+Hy ne fait pas exception a cette règle.  Commençons par la version
 en python::
 
   result = ((1 + 3 + 88) / 2) - 8
@@ -92,7 +91,7 @@ en python::
   # simplifie en...
   result = 38
 
-Et maintenant, meme chose, en hy:
+Et maintenant, même chose, en hy:
 
 .. code-block:: clj
 
@@ -109,13 +108,13 @@ assigner 38 a la variable "result".
 
 Alors?  Pas si difficile!
 
-C'est le principe premier de lisp... lisp est un porte-manteau pour "list
-processing"... la structure meme du programme repose sur des listes imbriquees.
+C'est le principe premier de lisp... lisp est un portemanteau pour "list
+processing"... la structure même du programme repose sur des listes imbriquées.
 (Si vous connaissez les listes en python,
-imaginez la structure ci-dessus, mais cette fois ecrite avec des crochets,
-cette structure permet de reveler sa dualite aussi bien en tant que programme que donnee.)
-Avec un peu de pratique tout deviendra tres clair,
-alors commencons par ecrire et tester un programme python tres simple avant d'en devoiler
+imaginez la structure ci-dessus, mais cette fois écrite avec des crochets,
+cette structure permet de révéler sa dualité aussi bien en tant que programme que donnée.)
+Avec un peu de pratique tout deviendra très clair,
+alors commençons par écrire et tester un programme python très simple avant d'en dévoiler
 la traduction en hy::
 
   def simple_conversation():
@@ -126,14 +125,14 @@ la traduction en hy::
   
   simple_conversation()
   
-L'execution du programme ci-dessus nous donnerait la sortie suivante::
+L'exécution du programme ci-dessus nous donnerait la sortie suivante::
 
   Hello!  I'd like to get to know you.  Tell me about yourself!
   What is your name? Gary
   What is your age? 38
   Hello Gary!  I see you are 38 years old.
 
-Et maintenant, l'equivalent en hy:
+Et maintenant, l'équivalent en hy:
 
 .. code-block:: clj
 
@@ -146,37 +145,37 @@ Et maintenant, l'equivalent en hy:
 
    (simple-conversation)
 
-Pour lire cette traduction, gardez en tete que le premier element de chacune de ses listes
-est la fonction (ou macro... nous y viendrons ulterieurement)
-appelee et les suivants ses arguments; il ne sera pas trop difficile de comprendre le sens de celle-ci.
-(comme vous l'avez probablement devine, defn est le mot-cle pour definir des FoNctions)
+Pour lire cette traduction, gardez en tête que le premier élément de chacune de ses listes
+est la fonction (ou macro... nous y viendrons ultérieurement)
+appelée et les suivants ses arguments; il ne sera pas trop difficile de comprendre le sens de celle-ci.
+(comme vous l'avez probablement devine, defn est le mot-clé pour définir des Fonctions)
 
-Malgre tout, beaucoup sont troubles par tant de parentheses, voila donc quelques conseils
-pour rendre les choses plus aisees: pensez a indenter votre code, utilisez un editeur
-supportant le 'parenthesis matching [TOFIX]' (indique les paires de parentheses visuellement)
-, la tache vous en sera facilitee.
+Malgré tout, beaucoup sont troubles par tant de parenthèses, voila donc quelques conseils
+pour rendre les choses plus aisées: pensez a indenter votre code, utilisez un éditeur
+supportant le 'parenthesis matching [TOFIX]' (indique les paires de parenthèses visuellement)
+, la tache vous en sera facilitée.
 
-Avoir un source represente par une structure de donnee tres simple telle que celle sur laquelle
-repose le noyau de lisp possede certains avantages.
-Premierement, parser devient tres simple, la structure complete du programme vous est presentee
-de maniere claire. (en hy il existe une etape supplementaire de conversion vers un AST python...
-dans d'autres lisps plus "pure" tels que Common Lips ou Emacs Lisp, la difference entre ce que
-vous voyez et ce qui est execute est moindre.)
+Avoir un source représente par une structure de donnée très simple telle que celle sur laquelle
+repose le noyau de lisp possède certains avantages.
+Premièrement, parser devient très simple, la structure complète du programme vous est présentée
+de manière claire. (en hy il existe une étape supplémentaire de conversion vers un AST python...
+dans d'autres lisps plus "pure" tels que Common Lips ou Emacs Lisp, la différence entre ce que
+vous voyez et ce qui est exécute est moindre.)
 
-Deuxiemement, les macros: avec un programme base sur une structure simple, ecrire du code qui
-ecrit du code devient aise, et avec ca la possibilite d'ajouter de nouveaux traits linguistiques
-tres rapidement. Avant hy, les choses etaient bien moins simples pour les pythonistas... desormais
-vous pouvez aussi profiter du pouvoir qu'elles procurent (evitez juste de viser votre pied)!
+Deuxièmement, les macros: avec un programme base sur une structure simple, écrire du code qui
+écrit du code devient aise, et avec ça la possibilité d'ajouter de nouveaux traits linguistiques
+très rapidement. Avant hy, les choses étaient bien moins simples pour les pythonistas... désormais
+vous pouvez aussi profiter du pouvoir qu'elles procurent (évitez juste de viser votre pied)!
 
 
 Hy est un lisp parfume au python (ou est-ce l'inverse?)
 =======================================================
 
-Hy cible l'AST de python, vous decouvrerez rapidement que vous avez acces
-a toutes les possibilites offertes par ce dernier.
+Hy cible l'AST de python, vous découvrirez rapidement que vous avez accès
+a toutes les possibilités offertes par ce dernier.
 
-Acces complet aux types de donnees et librairies standards de python en hy.
-Testons ceci dans l'interprete hy::
+Accès complet aux types de données et librairies standards de python en hy.
+Testons ceci dans l'interprète hy::
 
   => [1 2 3]
   [1, 2, 3]
@@ -187,24 +186,24 @@ Testons ceci dans l'interprete hy::
   => (, 1 2 3)
   (1, 2, 3)
 
-(Vous constaterez qu'a ce moment meme, la quotation de Common Lisp:
+(Vous constaterez qu'a ce moment même, la quotation de Common Lisp:
 
 .. code-block:: clj
 
    '(1 2 3)
 
-ne fonctionne pas. Utilisez plutot les crochets comme dans l'exemple ci-dessus.)
+ne fonctionne pas. Utilisez plutôt les crochets comme dans l'exemple ci-dessus.)
 
-Vous avez aussi acces aux methods des types primitifs::
+Vous avez aussi accès aux méthodes des types primitifs::
 
   => (.strip " fooooo   ")
   "fooooo"
 
-Qu'est-ce dont ? Oui, la meme choses que::
+Qu'est-ce dont ? Oui, la même choses que::
 
   " fooooo   ".strip()
 
-Exactement... lisp avec la 'dot notation'[TOFIX]!  Si cette chaine est liee a une variable
+Exactement... lisp avec la 'dot notation'[TOFIX]!  Si cette chaîne est liée a une variable
 on peut aussi saisir ce qui suit:
 
 .. code-block:: clj
@@ -220,11 +219,11 @@ Et les conditionnelles ?:
      (print "this is if true")
      (print "this is if false"))
 
-Le premier argument est un test logique, ensuite l'expression a evaluer si vrai,
+Le premier argument est un test logique, ensuite l'expression a évaluer si vrai,
 puis celle si faux. Cette clause 'else' est optionnelle.
 
-Pour des conditionnelles plus complexes, il n'y pas de forme 'elif' en hy. Son equivalent
-s'appelle 'cond'. En python, ce qui vous ecririez ainsi::
+Pour des conditionnelles plus complexes, il n'y pas de forme 'elif' en hy. Son équivalent
+s'appelle 'cond'. En python, ce qui vous écririez ainsi::
 
   somevar = 33
   if somevar > 50:
@@ -246,13 +245,13 @@ donnerait en hy:
     [true
      (print "That variable is jussssst right!")])
 
-On voit ici que cond .... [TOFIX] entre une expression dont on evalue
-sa valeur de verite (vraie ou fausse) et une expression resultante si
-cette derniere est vraie. Accessoirement, la notion de clause 'else' est
-implementee en testant 'true'. Cette tautologie implique qu'il y'aura
-toujours au moins une clause evaluee.
+On voit ici que cond .... [TOFIX] entre une expression dont on évalue
+sa valeur de vérité (vraie ou fausse) et une expression résultante si
+cette dernière est vraie. Accessoirement, la notion de clause 'else' est
+implémentée en testant 'true'. Cette tautologie implique qu'il y aura
+toujours au moins une clause évaluée.
      
-.. [Pour le TOFIX precedent]
+.. [Pour le TOFIX précèdent]
    What you'll notice is that cond switches off between a some statement
    that is executed and checked conditionally for true or falseness, and
    then a bit of code to execute if it turns out to be true.  You'll also
@@ -268,10 +267,10 @@ Dans un cas du style:
      (body-if-true)
      (body-if-false))
 
-Si on desire executer plusieurs instructions dans le corps des branches,
+Si on désire exécuter plusieurs instructions dans le corps des branches,
 comment faire ?
 
-Voici l'idiome adequat en hy:
+Voici l'idiome adéquat en hy:
 
 .. code-block:: clj
 
@@ -281,12 +280,12 @@ Voici l'idiome adequat en hy:
        (print "and why not, let's keep talking about how true it is!))
      (print "this one's still simply just false"))
 
-La forme "do" enrobe plusieurs expressions evaluees en sequence.
-Les habitues de lisps reconnaitront en 'do' un equivalent de la forme
-historiue 'progn'.
-Cette enrobage d'apparence superflu vient de la culture lisp, les sequences
-d'instructions sont releguees au second plans. On y favorise l'evaluation d'expression
-imbriquees. [TOFIX|WEENY-COMMENT]
+La forme "do" enrobe plusieurs expressions évaluées en séquence.
+Les habitues de lisps reconnaîtront en 'do' un équivalent de la forme
+historique 'progn'.
+Cette enrobage d'apparence superflu vient de la culture lisp, les séquences
+d'instructions sont reléguées au second plans. On y favorise l'évaluation d'expression
+imbriquées. [TOFIX|WEENY-COMMENT]
 
 Les commentaires commencent par un point-virgule:
 
@@ -296,13 +295,13 @@ Les commentaires commencent par un point-virgule:
   ; (print "but this will not")
   (+ 1 2 3)  ; we'll execute the addition, but not this comment!
 
-Boucler n'est pas complique, mais est exprime differemment. En python,
-on ecrirait::
+Boucler n'est pas complique, mais est exprime différemment. En python,
+on écrirait::
   
   for i in range(10):
       print "'i' is now at " + str(i)
 
-Dont l'equivalent en hy serait:
+Dont l'équivalent en hy serait:
 
 .. code-block:: clj
 
@@ -320,8 +319,8 @@ Vous pouvez aussi importer et utiliser les librairies python. Par exemple:
      (os.mkdir "/tmp/somedir/anotherdir")
      (print "Hey, that path isn't there!"))
 
-Les gestionnaires de context (context managers) python ('with')
-s'utilisent de la facon suivante:
+Les gestionnaires de contexte (context managers) python ('with')
+s'utilisent de la façon suivante:
 
 .. code-block:: clj 
  
@@ -333,8 +332,8 @@ traduction du code python::
   with file("/tmp/data.in") as f:
     print f.read()
  
-Bien sur, il on peut exprimer des listes en comprehension!
-Ce qu'en python serait ecrit::
+Bien sur, il on peut exprimer des listes en compréhension!
+Ce qu'en python serait écrit::
 
   odds_squared = [
     pow(num, 2)
@@ -355,7 +354,7 @@ En hy, donnerait:
 .. code-block:: clj
 
   ; Ici, un exemple honteusement repris d'une doc Clojure:
-  ; Listons toutes les cases d'un jeu d'echec.
+  ; Listons toutes les cases d'un jeu d'échec.
   
   (list-comp
     (, x y)
@@ -372,10 +371,7 @@ En hy, donnerait:
   ;  (7, 'A'), (7, 'B'), (7, 'C'), (7, 'D'), (7, 'E'), (7, 'F'), (7, 'G'), (7, 'H')]
 
 
-Python supporte
-  
-Python has support for various fancy argument and keyword arguments.
-In python we might see::
+Python supporte passage d'arguments sophistiques, vous pourriez voir ceci::
 
   >>> def optional_arg(pos1, pos2, keyword1=None, keyword2=42):
   ...   return [pos1, pos2, keyword1, keyword2]
@@ -387,7 +383,7 @@ In python we might see::
   >>> optional_arg(keyword1=1, pos2=2, pos1=3, keyword2=4)
   [3, 2, 1, 4]
 
-The same thing in Hy::
+La même chose en Hy::
 
   => (defn optional_arg [pos1 pos2 &optional keyword1 [keyword2 42]]
   ...  [pos1 pos2 keyword1 keyword2])
@@ -403,26 +399,25 @@ The same thing in Hy::
   ... 
   [3, 2, 1, 4]
 
-See how we use kwapply to handle the fancy passing? :)
+Vous avez remarque l'usage de kwapply pour appréhender l'appel le plus sophistique? :)
 
-There's also a dictionary-style keyword arguments construction that
-looks like:
+Une syntaxe orientée dictionnaire existe, voici à quoi elle ressemble:
 
 .. code-block:: clj
 
   (defn another_style [&key {"key1" "val1" "key2" "val2"}]
     [key1 key2])
 
-The difference here is that since it's a dictionary, you can't rely on
-any specific ordering to the arguments.
+La différence étant ici qu'un dictionnaire ne vous permet pas d'ordonner
+les arguments.
 
-Hy also supports ``*args`` and ``**kwargs``.  In Python::
+Hy accepte aussi ``*args`` et ``**kwargs``.  En Python::
 
   def some_func(foo, bar, *args, **kwargs):
     import pprint
     pprint.pprint((foo, bar, args, kwargs))
 
-The Hy equivalent:
+L'équivalent en Hy:
 
 .. code-block:: clj
 
@@ -430,8 +425,8 @@ The Hy equivalent:
     (import pprint)
     (pprint.pprint (, foo bar args kwargs)))
 
-Finally, of course we need classes!  In python we might have a class
-like::
+Pour finir, n'oublions pas les classes!  En python nous pourrions déclarer
+une classe de la façon suivante::
 
   class FooBar (object):
      def __init__(self, x):
@@ -441,7 +436,7 @@ like::
          return self.x
 
 
-In Hy:
+En Hy:
 
 .. code-block:: clj
 
@@ -458,14 +453,14 @@ In Hy:
         self.x)]])
 
 
-You can also do class-level attributes.  In Python::
+Les attributs de classe sont aussi permis.  En Python::
 
   class Customer(models.Model):
       name = models.CharField(max_length=255)
       address = models.TextField()
       notes = models.TextField()
 
-In Hy:
+En Hy:
 
 .. code-block:: clj
 
@@ -478,28 +473,29 @@ In Hy:
 Protips!
 ========
 
-Hy also features something known as the "threading macro", a really neat
-feature of Clojure's. The "threading macro" (written as "->"), is used
-to avoid deep nesting of expressions.
+Hy dispose également de "threading macro", macro d'en-filetage s'il
+fallait tenter une francisation, empruntée a l'écosystème Clojure.
+La "threading macro" (écrite "->"), est employée pour s'abstraire
+des imbrication trop profondes.
 
-The threading macro inserts each expression into the next expression's first
-argument place.
+La threading macro passe chaque expression en tant que premier argument de
+l'expression suivante.
 
-Let's take the classic:
+Prenons le classique:
 
 .. code-block:: clj
 
     (loop (print (eval (read))))
 
-Rather then write it like that, we can write it as follows:
+Plutôt que de l'écrire ainsi, on peut utiliser l'idiome suivant:
 
 .. code-block:: clj
 
     (-> (read) (eval) (print) (loop))
 
-Now, using `python-sh <http://amoffat.github.com/sh/>`_, we can show
-how the threading macro (because of python-sh's setup) can be used like
-a pipe:
+A présent, muni de `python-sh <http://amoffat.github.com/sh/>`_, on peut 
+constater comment la threading macro (grâce a la conception de python-sh)
+peut être utilisée tel un pipe:
 
 .. code-block:: clj
 
@@ -507,10 +503,10 @@ a pipe:
     => (-> (cat "/usr/share/dict/words") (grep "-E" "^hy") (wc "-l"))
     210
 
-Which, of course, expands out to:
+Qui, bien sur, est expansée en:
 
 .. code-block:: clj
 
     (wc (grep (cat "/usr/share/dict/words") "-E" "^hy") "-l")
 
-Much more readable, no? Use the threading macro!
+La lisibilité en est améliorée, non? Utilisez la threading macro!
