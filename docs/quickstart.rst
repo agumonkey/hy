@@ -5,12 +5,12 @@ Quickstart
 .. image:: _static/cuddles-transparent-small.png
    :alt: Cuddles par Karen Rustard
 
-(Remerciements a Karen Rustad pour Cuddles!)
+(Remerciements a Karen Rustard pour Cuddles!)
 
 
 **COMMENT INSTALLER HY RAPIDEMENT**:
 
-1. Creez un `Environment Virtuel Python
+1. Créez un `Environnement Virtuel Python
    <https://pypi.python.org/pypi/virtualenv>`_
 2. Activez le
 3. Installez `hy from PyPI <https://pypi.python.org/pypi/hy>`_ via ``pip install hy``
@@ -27,16 +27,16 @@ Quickstart
 
 6. Pressez CTRL-D quand vous avez fini
 
-OMG! C'est genial! Je veux ecrire un programme en hy.
+OMG! C'est génial! Je veux écrire un programme en hy.
 
-7. Ouvrez votre editeur de code pour elites et tapez::
+7. Ouvrez votre éditeur de code pour élites et tapez::
 
        (print "I was going to code in python syntax, but then I got hy.")
 
 8. Sauvegardez sous ``awesome.hy``
-9. Puis executez votre premier programme Hy::
+9. Puis exécutez votre premier programme Hy::
 
         hy awesome.hy
 
-10. Inspirez profondemment afin de ne rester calme
-11. Sourriez malicieusement avant de vous echapper votre votre cachette perpetrer d'innommables actes.
+10. Inspirez profondément afin de ne rester calme
+11. Souriez malicieusement avant de vous échapper votre votre cachette perpétrer d'innommables actes.

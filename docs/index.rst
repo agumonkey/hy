@@ -9,18 +9,18 @@ Bienvenue sur la documentation du langage Hy!
    :align: left
 
 Bienvenue sur `Hy <https://github.com/hylang/hy>`_!
-Hy est un delicieux dialecte de Lisp en Python.
-Comme Hy transform son code lisp an AST python, vous avez la totalite du monde python sous vos doigts,
+Hy est un délicieux dialecte de Lisp en Python.
+Comme Hy transforme son code lisp an AST python, vous avez la totalité du monde python sous vos doigts,
 sous l'apparence d'un Lisp!
 
-Voici notre mascotte, "Cuddles" (~Cajoles en francais) :
+Voici notre mascotte, "Cuddles" (~Cajoles en français) :
 
 .. image:: http://fc07.deviantart.net/fs70/i/2013/138/f/0/cuddles_the_hacker_by_doctormo-d65l7lq.png
    :alt: Paul chevauchant cuddles [sur la longueur|TOFIX]
 
 ..
-   Et l'ancienne version ascii art de la mascotte, preservee
-   comme Oeuf de Paques, pour les lecteurs de la documentation en .rst natif!
+   Et l'ancienne version ascii art de la mascotte, préservée
+   comme Oeuf de Pâques, pour les lecteurs de la documentation en .rst natif!
 
      LET'S CUDDLEFISH
                 ______
