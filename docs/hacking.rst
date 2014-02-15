@@ -1,112 +1,112 @@
 ===============
- Hacking on hy
+ Hacker hy
 ===============
 
 .. highlight:: bash
 
-Join our hyve!
+Rejoignez notre ruche (hyve en anglais)!
 ==============
 
-Please come hack on hy!
+Venez hacker hy!
 
-Please come hang out with us on ``#hy`` on ``irc.freenode.net``!
+Passez nous voir a ``#hy`` sur ``irc.freenode.net``!
 
-Please talk about it on Twitter with the ``#hy`` hashtag!
+Parlez-en sur Twitter avec le hashtag ``#hy`` !
 
-Please blog about it!
+Bloggez-en [TOFIX]!
 
-Please don't spraypaint it on your neighbor's fence (without asking nicely)!
+   Ne le taggez  pas sur le mur du voisin (sauf accord préalable)!
 
 
-Hack!
-=====
+Hacker!
+=======
 
-Do this:
+Procédez a ce qui suit:
 
-1. create a `virtual environment
+1. créez un `environnement virtuel (virtual environment en anglais)
    <https://pypi.python.org/pypi/virtualenv>`_::
 
        $ virtualenv venv
 
-   and activate it::
+   et activez le::
 
        $ . venv/bin/activate
 
-   or use `virtualenvwrapper <http://virtualenvwrapper.readthedocs.org/en/latest/#introduction>`_
-   to create and manage your virtual environment::
+   ou bien utilisez `virtualenvwrapper <http://virtualenvwrapper.readthedocs.org/en/latest/#introduction>`_
+   pour gérer vos environnements ::
 
        $ mkvirtualenv hy
        $ workon hy
 
-2. get the source code::
+2. récupérez le code source::
 
        $ git clone https://github.com/hylang/hy.git
 
-   or use your fork::
+   ou bien votre fork::
 
        $ git clone git@github.com:<YOUR_USERNAME>/hy.git
-3. install for hacking::
+3. installez le::
 
        $ cd hy/
        $ pip install -e .
 
-4. install other develop-y requirements::
+4. installez les modules nécessaires au développement::
 
        $ pip install -r requirements-dev.txt
 
-5. do awesome things; make someone shriek in delight/disgust at what
-   you have wrought.
+5. Codez des choses extraordinaires; faites hurlez quelqu'un d'émoi/horreur au fruit de votre
+   labeur.
 
 
-Test!
-=====
+Tester!
+=======
 
-Tests are located in ``tests/``. We use `nose
+Les tests se trouvent dans ``tests/``. Nous utilisons `nose
 <https://nose.readthedocs.org/en/latest/>`_.
 
-To run the tests::
+Pour lancer les tests::
 
     $ nosetests
 
-Write tests---tests are good!
+Écrivez des tests---tests are good[TOFIX]!
 
-Also, it is good to run the tests for all the platforms supported and for pep8 compliant code. 
-You can do so by running tox::
+De plus, il est bon de faire tourner les tests sur toutes les plates-formes supportées ainsi
+que de vérifier la conformité pep8::
 
     $ tox
 
-Document!
-=========
+Documenter!
+===========
 
-Documentation is located in ``docs/``. We use `Sphinx
+La documentation se trouve dans ``docs/``. Nous utilisons `Sphinx
 <http://sphinx-doc.org/>`_.
 
-To build the docs in HTML::
+Pour générer la documentation en HTML::
 
     $ cd docs
     $ make html
 
-Write docs---docs are good! Even this doc!
+Écrivez de la documentation---docs are good[TOFIX]! Même celle-ci!
 
 
-Core Development Rules
-======================
+Règles de développement du Noyau (Core en anglais)
+==================================================
 
-All incoming changes need to be acked by 2 different members of Hylang's
-core team. Additional review is clearly welcome, but we need a minimum of
-2 signoffs for any change.
+Toute soumission se doit d'être acceptée (ACK) par 2 membres différents de l'équipe
+de base d'Hylang. Toute aide supplémentaire est évidemment la bienvenue, mais
+il faut un minimum de 2 approbations pour une soumission.
 
-If a core member is sending in a PR, please find 2 core members that don't
-include the PR submitter. The idea here is that one can work with the PR
-author, and a second acks the entire change set.
+Si un membre de base envoie un PR (Pull Request), veuillez en trouver 2 autres.
+L'idée étant que le premier peut travailler avec l'auteur de la PR, et le second
+accepte le `change set` en entier.
 
-If the change is adding documentation, feel free to just merge after one
-ACK. We've got low coverage, so it'd be great to keep that barrier low.
+Si le patch concerne la documentation, n'hésitez pas a merge avec un seul ACK.
+La couverture est baisse, autant éviter de mettre trop de barrières.
 
 
-Core Team
+Équipe de base
 =========
 
-Core development team of hy consists of following developers.
+L'équipe de base de hy est constituée des développeurs suivants.
 
 .. include:: coreteam.rst
